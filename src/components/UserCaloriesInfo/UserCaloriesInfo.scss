@@ -1,0 +1,45 @@
+@import "../../styles/_shared.scss";
+
+.percent-num-transition {
+  transform: translateX(-5%);
+  margin-bottom: 10px;
+}
+
+.percent-num-full-transition {
+  padding-right: 19%;
+  margin-bottom: 10px;
+}
+.goal-percentage {
+  margin: 10px 10px 0px 10px;
+}
+
+.ui.tiny.progress .bar {
+  background-color: $base-color;
+}
+
+.ui.tiny.progress {
+  margin: 5px 0px;
+}
+
+.calories-data {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 8px 25px 8px;
+}
+
+.daily-calories-goal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.calories {
+  font-size: 1.6em;
+  margin: 0px;
+}
+
+.calories-breakdown {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 8px;
+}

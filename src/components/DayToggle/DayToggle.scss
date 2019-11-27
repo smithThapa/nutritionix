@@ -1,0 +1,32 @@
+@import "../../styles/_shared.scss";
+
+.toogle-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.arrow {
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  color: $base-color;
+}
+
+.day {
+  font-size: 1.5em;
+  display: inline-block;
+  width: 320px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 960px) {
+  .arrow {
+    color: white;
+  }
+
+  .day {
+    color: white;
+  }
+}

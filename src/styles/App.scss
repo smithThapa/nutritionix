@@ -1,0 +1,22 @@
+@import "shared.scss";
+@import "common.scss";
+
+@import "../components/UserCaloriesInfo/UserCaloriesInfo.scss";
+@import "../components/SelectedItemsList/SelectedItemsList.scss";
+@import "../components/SearchList/SearchList.scss";
+@import "../components/AddButton/AddButton.scss";
+
+.navbar {
+  position: relative;
+  margin: 0px;
+  background-color: $base-color;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 960px) {
+  .main-section {
+    display: flex;
+  }
+}
