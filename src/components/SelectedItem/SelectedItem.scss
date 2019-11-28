@@ -1,3 +1,5 @@
+$blue-violet: #6200ee;
+
 .selected-item-container {
   position: absolute;
   height: 100vh;
@@ -6,23 +8,100 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;
+  top: 0;   
 }
 
 .selected-item {
   height: 391px;
   width: 304px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
   background-color: #fafafa;
   border-radius: 4px;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
     0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 8px 10px 1px rgba(0, 0, 0, 0.14);
 }
 
+.selected-item-img{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.selected-item-name{
+  font-size: 25px;
+
+  margin-top: 5px;
+  margin-bottom: 5px;;
+}
+
+.cancel-button{
+  order: 2;
+}
+
+.clear-icon{
+  color: $blue-violet;
+}
+
 .selected-item-serving-infos {
   display: flex;
+  align-items:center;
 }
 
 .selected-item-img img {
+
   width: 64px;
   height: 64px;
+  order: 1;
+}
+
+.selected-item-value{
+  font-size: 20px;
+  margin: 0px;
+}
+
+.serving-text-field{
+  width: 75%;
+  color: $blue-violet !important;
+
+} 
+
+.serving-text-field label, .serving-text-field p{
+  color: blue !important;
+}
+
+.selected-item-desc {
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0px;
+  font-size: 15px;
+}
+
+.MuiFilledInput-underline.Mui-error:after{
+  border-bottom-color: blue !important;
+}
+
+.MuiSelect-icon{
+  right: 5% !important;
+}
+
+
+.value-box{
+  margin: 10px;
+}
+
+.selected-item-add-button{
+  width: 72px;
+  height: 36px;
+  align-self: flex-end;
+  margin-top: 10px !important;
+  
+}
+
+.form-control{
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+.form-control-select{
+  padding: 10px 10px 10px 14px;
 }

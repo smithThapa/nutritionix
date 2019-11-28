@@ -9,42 +9,54 @@ import AddButton from './components/AddButton/AddButton';
 import SearchList from './components/SearchList/SearchList';
 import SelectedItem from './components/SelectedItem/SelectedItem';
 import Hidden from '@material-ui/core/Hidden';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main:'#6200ee'
+    }
+  }
+})
 
 export class App extends Component {
 
 
   render(){
     return (
-      <div className="App">
-        <div class="navbar">
-          <SearchBar/>
-          <Hidden mdUp>
-            <UserInfo/>
-          </Hidden>
-          <Hidden smDown>
-            <DayToggle/>
-          </Hidden>
-        </div>
-
-        <SearchList/>
-        <SelectedItem/>
-        
-        <div class="main-section">
-          <div>
+      <MuiThemeProvider theme={theme}>
+        <div className="App">
+          <div class="navbar">
+            <SearchBar/>
             <Hidden mdUp>
-              <DayToggle/>
-            </Hidden>
-            <Hidden smDown>
               <UserInfo/>
             </Hidden>
-            
-            <UserCaloriesInfo/>
+            <Hidden smDown>
+              <DayToggle/>
+            </Hidden>
           </div>
-          <SelectedItemsList/>
+
+          <SearchList/>
+          <SelectedItem/>
+          
+          <div class="main-section">
+            <div>
+              <Hidden mdUp>
+                <DayToggle/>
+              </Hidden>
+              <Hidden smDown>
+                <UserInfo/>
+              </Hidden>
+              
+              <UserCaloriesInfo/>
+            </div>
+            <SelectedItemsList/>
+          </div>
+          
+          <AddButton/>
         </div>
-        
-        <AddButton/>
-      </div>
+      </MuiThemeProvider>
+
     )
   }
 
