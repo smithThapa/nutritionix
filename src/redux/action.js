@@ -1,9 +1,15 @@
 export const setSearchBarActive = payload => ({
-    type:'SEARCHBAR_ACTIVE',
+    type:'SET_SEARCHBAR_ACTIVE',
     payload
 })
 
 export const setSelectedItemActive = payload => ({
-    type: 'SELECTED_ITEM_ACTIVE',
+    type: 'SET_SELECTED_ITEM_ACTIVE',
     payload
+})
+
+export const setDayIndex = payload => ({
+    type: 'SELECT_DAY_INDEX',
+    payload
+
 })

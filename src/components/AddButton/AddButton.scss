@@ -4,8 +4,8 @@
   background-color: $base-color;
   width: 56px;
   height: 56px;
-  left: 90%;
-  bottom: 5%;
+  left: calc(100% - 80px);
+  bottom: 3%;
   font-size: 3em;
   color: white;
   text-align: center;

@@ -53,7 +53,7 @@ class SelectedItem extends React.Component{
                                 variant="filled"
                                 helperText={"calories"}
                                 className="serving-text-field"
-                                error={"error"}
+
                             />
                         </div>
                         <div className="selected-item-grams value-box">

@@ -26,7 +26,7 @@ export class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <div className="App">
-          <div class="navbar">
+          <div className="navbar">
             <SearchBar/>
             <Hidden mdUp>
               <UserInfo/>
@@ -39,7 +39,7 @@ export class App extends Component {
           <SearchList/>
           <SelectedItem/>
           
-          <div class="main-section">
+          <div className="main-section">
             <div>
               <Hidden mdUp>
                 <DayToggle/>

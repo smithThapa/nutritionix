@@ -9,17 +9,19 @@ const initialState = {
     mockData: MOCK_DATA,
     searchData: emptySearch,
     searchBarActive: false,
-    selectedItemActive: true,
+    selectedItemActive: false,
     selectedItem: {},
     currentDateIndex: 0
 }
 
 export default (state = initialState, action) => {
     switch(action.type){
-        case 'SEARCHBAR_ACTIVE':
+        case 'SET_SEARCHBAR_ACTIVE':
             return {...state, searchBarActive: action.payload};
-        case 'SELECTED_ITEM_ACTIVE':
-            return {...state, selectedItemActive: action.payload}
+        case 'SET_SELECTED_ITEM_ACTIVE':
+            return {...state, selectedItemActive: action.payload};
+        case 'SELECT_DAY_INDEX':
+            return {...state, currentDateIndex: action.payload};
         default: 
             return state;
     }

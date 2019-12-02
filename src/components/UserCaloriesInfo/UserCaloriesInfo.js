@@ -22,7 +22,7 @@ export default function UserCaloriesInfo() {
 
     const caloriesBreakdown = (calories, mealType) => {
         return (
-            <div>
+            <div key={`${calories}-${mealType}`}>
                 <p className="calories">{calories}</p>
                 <p className="meal-type grey">{mealType}</p>
             </div>

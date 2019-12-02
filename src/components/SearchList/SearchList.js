@@ -1,6 +1,7 @@
 import React from "react";
 import Divider from '@material-ui/core/Divider';
-
+import {setSelectedItemActive} from '../../redux/action';
+import {connect} from 'react-redux';
 
 
 
@@ -47,42 +48,58 @@ const mockSearchListBranded= [
 
 
 
-export default function SearchList() {
-  return (
-    <div className="search-container">
-      <div className="search-list">
-        <h3 className="title-search-list">COMMON</h3>
-        <ul className="unordered-list">
-          {mockSearchListCommon.map(value => {
-            return (
-              <li className="search-item">
-                <img className="search-item-img" src={value.img} alt="search item"></img>
-                <div className= "search-item-p-hr">
-                  <p>{value.name}</p>
-                  <Divider/>
-                </div>
-                
-              </li>
-            )
-          })}
-        </ul>
-        <Divider/>
-        <h3 className="title-search-list" >BRANDED</h3>
-        <ul className="unordered-list">
-          {mockSearchListBranded.map(value => {
-            return (
-              <li className="search-item">
+class SearchList extends React.Component {
+
+  render() {
+    return (
+      <div className="search-container" style={{display:'none'}}>
+        <div className="search-list">
+          <h3 className="title-search-list">COMMON</h3>
+          <ul className="unordered-list">
+            {mockSearchListCommon.map(value => {
+              return (
+                <li className="search-item" key={value.name} onClick={() => {this.props.setSelectedItemActive(true) }}>
                   <img className="search-item-img" src={value.img} alt="search item"></img>
-                  <div className= "search-item-p-hr">
+                  <div className="search-item-p-hr">
                     <p>{value.name}</p>
-                    <Divider/>
+                    <Divider />
                   </div>
-              </li>
-            )
-          })}
-        </ul>
+
+                </li>
+              )
+            })}
+          </ul>
+          <Divider />
+          <h3 className="title-search-list" >BRANDED</h3>
+          <ul className="unordered-list">
+            {mockSearchListBranded.map(value => {
+              return (
+                <li className="search-item" key={value.name}>
+                  <img className="search-item-img" src={value.img} alt="search item"></img>
+                  <div className="search-item-p-hr">
+                    <p>{value.name}</p>
+                    <Divider />
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
-    </div>
-    
-  );
+
+    );
+  }
+  
 }
+
+const mapStateToProps = state => {
+
+}
+
+
+const mapDispatchToProps = dispatch => ({
+  setSelectedItemActive: (bool) => {dispatch(setSelectedItemActive(bool))}
+})
+
+export default connect(null,mapDispatchToProps)(SearchList);
+
