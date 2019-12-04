@@ -10,6 +10,8 @@ import SearchList from './components/SearchList/SearchList';
 import SelectedItem from './components/SelectedItem/SelectedItem';
 import Hidden from '@material-ui/core/Hidden';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import { connect } from 'react-redux';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -19,7 +21,7 @@ const theme = createMuiTheme({
   }
 })
 
-export class App extends Component {
+class App extends Component {
 
 
   render(){
@@ -52,8 +54,7 @@ export class App extends Component {
             </div>
             <SelectedItemsList/>
           </div>
-          
-          <AddButton/>
+          <AddButton inputRef= {this.props.inputRef}/>
         </div>
       </MuiThemeProvider>
 
@@ -62,5 +63,9 @@ export class App extends Component {
 
 }
 
-export default App;
+const mapStateToProps = state => ({
+  inputRef: state.inputRef
+})
+
+export default connect(mapStateToProps,null)(App);
 

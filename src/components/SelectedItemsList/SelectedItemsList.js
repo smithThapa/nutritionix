@@ -3,17 +3,12 @@ import Divider from '@material-ui/core/Divider';
 import uuid from 'uuid';
 
 import {connect} from 'react-redux';
+import {calculateConsumedCalories,calculateConsumedGrams} from '../../utils/calculate';
 
 
 class SelectedItemsList extends React.Component {
 
-    calculateConsumedCalories(servingSize, servingQty, totalCalories){
-        return Math.round((servingSize/servingQty)*totalCalories);
-    }
 
-    calculateConsumedGrams(servingSize, servingQty, totalGrams){
-        return Math.round((servingSize/servingQty)*totalGrams);
-    }
 
     render(){
 
@@ -72,10 +67,12 @@ class SelectedItemsList extends React.Component {
 
 
         const foodAddedArr = this.props.data.data_points[this.props.currentDateIndex].intake_list;
+        console.log(foodAddedArr);
         
         const foodAddedHTML = foodAddedArr.map(food => {
-            const consumedGrams = this.calculateConsumedGrams(food.serving_size, food.serving_qty, food.serving_weight_grams)
-            const consumedCalories = this.calculateConsumedCalories(food.serving_size, food.serving_qty, food.nf_calories);
+            const consumedGrams = calculateConsumedGrams(food.serving_size, food.serving_qty, food.serving_weight_grams)
+            const consumedCalories = calculateConsumedCalories(food.serving_size, food.serving_qty, food.nf_calories);
+            console.log(food.meal_type)
             return foodAdded(food.food_name,food.serving_size, food.serving_unit,consumedGrams, consumedCalories, food.meal_type);
         })
 

@@ -7,7 +7,7 @@
   display: flex;
   padding: 16px;
   font-family: Roboto;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -15,15 +15,13 @@
   letter-spacing: 0.15px;
   color: rgba(0, 0, 0, 0.87);
   align-items: center;
+  cursor: pointer;
 }
 
-.search-item p {
-  margin: 0px;
-}
 
 .search-item-img {
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
 }
 
 .search-container {
@@ -32,11 +30,18 @@
   top: 70px;
   width: 100vw;
   height: calc(100vh - 70px);
+  margin: 0 auto;
+}
+
+.background-search{
+  position: absolute;
+  z-index: 100;
+  width: 100vw;
+  height: calc(100vh - 70px);
+
 }
 
 .search-list {
-  top: 70px;
-  margin: 0 auto;
   display: flex;
   background: #fafafa;
   max-height: calc(100vh - 70px);
@@ -45,14 +50,22 @@
   width: calc(100vw - 20px);
   flex-direction: column;
   overflow-y: scroll;
+  z-index: 300;
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+
 }
 
 .title-search-list {
   color: rgba(0, 0, 0, 0.6);
-  font-size: 16px;
+  font-size: 12px;
   line-height: 16px;
   letter-spacing: 2px;
   margin-left: 10px;
+  margin-bottom: 0px;
 }
 
 .search-item-p-hr {
@@ -60,4 +73,28 @@
   display: flex;
   flex-direction: column;
   padding-left: 16px;
+  text-transform: capitalize;
+  
 }
+
+.search-item-brand-name{
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search-item-p-hr .branded-food-name{
+  margin-bottom: 0px;
+}
+
+.search-item-p-hr .search-item-brand-name{
+  margin-top: 0px;
+}
+
+
+

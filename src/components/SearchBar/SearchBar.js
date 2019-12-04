@@ -6,6 +6,8 @@ import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
 import "./SearchBar.scss";
+import {setSearchData, setInputRef} from '../../redux/action';
+import AddButton from '../AddButton/AddButton';
 
 
 class SearchBar extends Component {
@@ -20,9 +22,16 @@ class SearchBar extends Component {
     this.searchBarRef.current.focus();
   }
 
+  searchChangeHandler = (value) => {
+    this.props.setSearchData(value);
+  }
+
+  componentDidMount(){
+    this.props.setInputRef(this.searchBarRef);
+  }
+
 
   render(){
-    console.log(this.props.searchBarActive);
     return (
       <div className="search-bar">
         <div 
@@ -33,31 +42,35 @@ class SearchBar extends Component {
           <Paper 
             className="root-searchbar"
             tabIndex="-1"
-            onFocus = {() => {this.props.setSearchBarActive(true)}} 
+            onFocus = {() => {this.props.setSearchBarActive(true) }} 
             onBlur = {() => {this.props.setSearchBarActive(false)}}
-            
+            onChange = {(e) => {this.searchChangeHandler(e.target.value)}}  
           >
             <IconButton className="iconButton" aria-label="search">
               <SearchIcon />
             </IconButton>
             <InputBase 
               className="input" 
-              placeholder="Search foods..." />
+              placeholder="Search foods..."
+              inputRef = {this.searchBarRef} />
           </Paper> 
         </div>
-      
+        {/* <AddButton/> */}
       </div>
+      
       
     );
   }
 }
 
 const mapStateToProps = state => ({
-  searchBarActive: state.searchBarActive
+  searchBarActive: state.searchBarActive,
 })
 
 const mapDispatchToProps = dispatch => ({
-  setSearchBarActive: (e) => dispatch(setSearchBarActive(e))
+  setSearchBarActive: (e) => dispatch(setSearchBarActive(e)),
+  setSearchData: (value) => dispatch(setSearchData(value)),
+  setInputRef: (e) => dispatch(setInputRef(e))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

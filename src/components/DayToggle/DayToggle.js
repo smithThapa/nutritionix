@@ -40,6 +40,17 @@ class DayToggle extends React.Component{
         this.props.setDayIndex(index);
     }
 
+    changeDay = index => {
+        switch(index){
+            case 0:
+                return 'Today';
+            case 1:
+                return 'Yesterday';
+            case 2:
+                return '2 days ago';
+        }
+    }
+
 
 
     render(){
@@ -47,7 +58,7 @@ class DayToggle extends React.Component{
         return (
             <div className="toogle-day" >
                 <ArrowBackIosIcon className = "arrow"  onClick = {()=> {this.currentDateHandler('DECREASE')}}/>
-                <div className="day">Today</div>
+                <div className="day">{this.changeDay(this.props.index)}</div>
                 <ArrowForwardIosIcon className = "arrow" onClick={()=>{this.currentDateHandler('INCREASE')}}/>
             </div>
               
