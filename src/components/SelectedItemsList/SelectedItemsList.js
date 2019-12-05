@@ -67,12 +67,11 @@ class SelectedItemsList extends React.Component {
 
 
         const foodAddedArr = this.props.data.data_points[this.props.currentDateIndex].intake_list;
-        console.log(foodAddedArr);
+
         
         const foodAddedHTML = foodAddedArr.map(food => {
             const consumedGrams = calculateConsumedGrams(food.serving_size, food.serving_qty, food.serving_weight_grams)
             const consumedCalories = calculateConsumedCalories(food.serving_size, food.serving_qty, food.nf_calories);
-            console.log(food.meal_type)
             return foodAdded(food.food_name,food.serving_size, food.serving_unit,consumedGrams, consumedCalories, food.meal_type);
         })
 
