@@ -1,14 +1,6 @@
 @import "../../styles/_shared.scss";
 
-.percent-num-transition {
-  transform: translateX(-5%);
-  margin-bottom: 10px;
-}
 
-.percent-num-full-transition {
-  padding-right: 19%;
-  margin-bottom: 10px;
-}
 .goal-percentage {
   margin: 10px 10px 0px 10px;
 }
@@ -42,4 +34,12 @@
   display: flex;
   justify-content: space-between;
   margin: 15px 8px;
+}
+
+.percentage-num{
+  display: flex;
+}
+
+.percentage-num p{
+  align-self: flex-end;
 }

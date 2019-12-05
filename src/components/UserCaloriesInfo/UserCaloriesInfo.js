@@ -26,6 +26,7 @@ class UserCaloriesInfo extends React.Component {
                 mealType: "Snack"
             }
         ]
+        this.goalCalories = 1500;
 
     }
 
@@ -55,24 +56,19 @@ class UserCaloriesInfo extends React.Component {
 
     }
 
+    getTotalCalories = () => {
+        let totalCalories = 0;
+        for(let i= 0; i< this.caloriesMeal.length; i++){
+            totalCalories += this.caloriesMeal[i].calories;
+        }
+
+        return totalCalories;
+    }
+
 
     render() {
         this.getCaloriesBreakDown();
-        let percentage = 86;
-        let percentageNumHTML = '';
-        if (percentage < 5) {
-            percentageNumHTML = (
-                <div style={{ marginLeft: `${percentage}%` }} className="percent-num">{percentage}%</div>
-            );
-        } else if (percentage > 95) {
-            percentageNumHTML = (
-                <div style={{ marginLeft: `${percentage - 8}%` }} >{percentage}%</div>
-            );
-        } else {
-            percentageNumHTML = (
-                <div style={{ marginLeft: `${percentage}%` }} className="percent-num-transition">{percentage}%</div>
-            )
-        }
+        let percentage = Math.round((this.getTotalCalories()/this.goalCalories)* 100, 0);
 
         const caloriesBreakdown = (calories, mealType) => {
             return (
@@ -87,24 +83,33 @@ class UserCaloriesInfo extends React.Component {
             return caloriesBreakdown(meal.calories, meal.mealType);
         })
 
+        let flexGrow = 1;
+        if(percentage < 10){
+            flexGrow = `.0${percentage}`
+        } else if (percentage >= 10 && percentage < 100){
+            flexGrow = `.${percentage}`
+        }
 
 
         return (
             <div className="calories-user-info">
                 <div className="calories-data">
                     <div className="consumed-calories">
-                        <p className="calories"> 1289 cal</p>
+                        <p className="calories"> {this.getTotalCalories()} cal</p>
                         <p className="grey">consumed</p>
                     </div>
 
                     <div className="daily-calories-goal">
-                        <p className="calories">1500 cal</p>
+                        <p className="calories"> {this.goalCalories} cal</p>
                         <p className="grey">daily goal</p>
                     </div>
                 </div>
                 <div className="goal-percentage"  >
-                    <LinearProgress variant="determinate" value={percentage} />
-                    {percentageNumHTML}
+                    <LinearProgress variant="determinate" value={percentage>100? 100: percentage} />
+                    <div className="percentage-num">
+                        <div style={{'flexGrow': flexGrow}}> </div>
+                        <p>{percentage}%</p>
+                    </div>
                 </div>
                 <div className="calories-breakdown">
                     {caloriesMealHTML}
