@@ -1,7 +1,6 @@
 import React from 'react';
 import Divider from '@material-ui/core/Divider';
 import uuid from 'uuid';
-
 import {connect} from 'react-redux';
 import {calculateConsumedCalories,calculateConsumedGrams} from '../../utils/calculate';
 
@@ -38,34 +37,7 @@ class SelectedItemsList extends React.Component {
             )
         }
     
-        // const foodAddedArr = [
-        //     {
-        //         name: "Cheese",
-        //         portion: "1 slice(28 g)",
-        //         calories: "113 cal",
-        //         mealType: "Snack"
-        //     },
-        //     {
-        //         name: "Cheese",
-        //         portion: "1 slice(28 g)",
-        //         calories: "113 cal",
-        //         mealType: "Snack"
-        //     },
-        //     {
-        //         name: "Cheese",
-        //         portion: "1 slice(28 g)",
-        //         calories: "113 cal",
-        //         mealType: "Snack"
-        //     },
-        //     {
-        //         name: "Cheese",
-        //         portion: "1 slice(28 g)",
-        //         calories: "113 cal",
-        //         mealType: "Snack"
-        //     }
-        // ]
-
-
+ 
         const foodAddedArr = this.props.data.data_points[this.props.currentDateIndex].intake_list;
 
         

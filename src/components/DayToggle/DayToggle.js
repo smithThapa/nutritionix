@@ -58,7 +58,7 @@ class DayToggle extends React.Component {
 
   render() {
     return (
-      <div className="toogle-day">
+      <div className="toggle-day">
         <ArrowBackIosIcon
           className="arrow"
           onClick={() => {

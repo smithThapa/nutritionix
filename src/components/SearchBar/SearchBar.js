@@ -7,7 +7,6 @@ import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
 import "./SearchBar.scss";
 import {setSearchData, setInputRef} from '../../redux/action';
-import AddButton from '../AddButton/AddButton';
 
 
 class SearchBar extends Component {
@@ -55,7 +54,6 @@ class SearchBar extends Component {
               inputRef = {this.searchBarRef} />
           </Paper> 
         </div>
-        {/* <AddButton/> */}
       </div>
       
       

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './UserInfo.scss';
-import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden'
 
 export default class UserInfo extends Component {

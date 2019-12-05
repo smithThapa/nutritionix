@@ -11,12 +11,6 @@ import {setSelectedItemActive, addItem} from '../../redux/action';
 
 import { connect } from 'react-redux';
 
-
-// const mockData = {
-//     name: 'Cheese',
-//     img: 'https://d2xdmhkmkbyw75.cloudfront.net/1034_thumb.jpg'
-// }
-
 function isEmpty(obj) {
     for(var key in obj) {
         if(obj.hasOwnProperty(key))
@@ -135,3 +129,7 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectedItem);
 
+// const mockData = {
+//     name: 'Cheese',
+//     img: 'https://d2xdmhkmkbyw75.cloudfront.net/1034_thumb.jpg'
+// }

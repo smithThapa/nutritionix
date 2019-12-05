@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 const APP_ID = '93bad8ac';
 const APP_KEY = 'b55223333d6056beeff3b79de13b3e6c';
 
