@@ -24,8 +24,8 @@ class SelectedItemsList extends React.Component {
                         </div>
                     </div>
                     <div className="calories-mealType">
-                        <div className="bold-font">{calories} cal</div>
-                        <div className="grey meal-type">{mealType}</div>
+                        <div className="bold-font calories-bold">{calories} cal</div>
+                        <div className="grey meal-type-selected-item">{mealType}</div>
                     </div>
                     
                     

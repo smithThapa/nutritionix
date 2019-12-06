@@ -96,12 +96,12 @@ class UserCaloriesInfo extends React.Component {
                 <div className="calories-data">
                     <div className="consumed-calories">
                         <p className="calories"> {this.getTotalCalories()} cal</p>
-                        <p className="grey">consumed</p>
+                        <p className="grey calories-p">consumed</p>
                     </div>
 
                     <div className="daily-calories-goal">
                         <p className="calories"> {this.goalCalories} cal</p>
-                        <p className="grey">daily goal</p>
+                        <p className="grey calories-p">daily goal</p>
                     </div>
                 </div>
                 <div className="goal-percentage"  >

@@ -19,12 +19,6 @@ export const setDayIndex = payload => ({
     payload
 })
 
-export const setInputRef= payload => ({
-    type: 'SET_INPUT_REF',
-    payload
-})
-
-
 
 export const setSearchData = value => dispatch => {
     const type = 'SET_SEARCH_DATA';

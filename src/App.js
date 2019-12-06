@@ -5,12 +5,11 @@ import UserInfo from './components/UserInfo/UserInfo';
 import DayToggle from './components/DayToggle/DayToggle';
 import UserCaloriesInfo from './components/UserCaloriesInfo/UserCaloriesInfo';
 import SelectedItemsList from './components/SelectedItemsList/SelectedItemsList';
-import AddButton from './components/AddButton/AddButton';
 import SearchList from './components/SearchList/SearchList';
 import SelectedItem from './components/SelectedItem/SelectedItem';
 import Hidden from '@material-ui/core/Hidden';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
-import { connect } from 'react-redux';
+
 
 
 const theme = createMuiTheme({
@@ -21,7 +20,7 @@ const theme = createMuiTheme({
   }
 })
 
-class App extends Component {
+export default class App extends Component {
 
 
   render(){
@@ -54,7 +53,6 @@ class App extends Component {
             </div>
             <SelectedItemsList/>
           </div>
-          <AddButton inputRef= {this.props.inputRef}/>
         </div>
       </MuiThemeProvider>
 
@@ -63,9 +61,4 @@ class App extends Component {
 
 }
 
-const mapStateToProps = state => ({
-  inputRef: state.inputRef
-})
-
-export default connect(mapStateToProps,null)(App);
 

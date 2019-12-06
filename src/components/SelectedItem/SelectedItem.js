@@ -37,7 +37,9 @@ class SelectedItem extends React.Component{
     }
 
     render(){
+        
         const {selectedItem, selectedItemActive} = this.props;
+        console.log("selected item: ", selectedItem)
         let selectedItemContainer ='';
         if(!isEmpty(selectedItem) && selectedItemActive){
             selectedItemContainer = (
@@ -51,6 +53,7 @@ class SelectedItem extends React.Component{
                             <img src={selectedItem.photo.thumb} alt="Cheese"></img>
                         </div>
                         <div className="selected-item-name">{selectedItem.food_name}</div>
+                        {selectedItem.nix_brand_id && <div className="selected-item-brand-name">{selectedItem.brand_name}</div>}
                         <Divider />
                         <div className="selected-item-serving-infos">
                             <div className="selected-item-serving-container">
@@ -78,7 +81,7 @@ class SelectedItem extends React.Component{
                         </div>
     
                         <Divider />
-                        <p>ADD TO TODAY</p>
+                        <p className="add-to-today">ADD TO TODAY</p>
                         <FormControl className="form-control">
                             <Select
                                 variant="filled"

@@ -6,18 +6,19 @@ import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
 import "./SearchBar.scss";
-import {setSearchData, setInputRef} from '../../redux/action';
-
+import {setSearchData} from '../../redux/action';
+import AddButton from '../AddButton/AddButton';
 
 class SearchBar extends Component {
 
   constructor(props){
     super(props);
     this.searchBarRef = React.createRef();
+    this.activeSearchBar = this.activeSearchBar.bind(this);
   }
 
 
-  activeSearchBar = () => {
+  activeSearchBar() {
     this.searchBarRef.current.focus();
   }
 
@@ -25,14 +26,12 @@ class SearchBar extends Component {
     this.props.setSearchData(value);
   }
 
-  componentDidMount(){
-    this.props.setInputRef(this.searchBarRef);
-  }
 
 
   render(){
     return (
-      <div className="search-bar">
+      <>
+      <div className="search-bar" >
         <div 
       className="cover"
       style={this.props.searchBarActive ? {display:'block'}: {display:'none'}}>
@@ -55,6 +54,8 @@ class SearchBar extends Component {
           </Paper> 
         </div>
       </div>
+      <AddButton activeSearchBar= {this.activeSearchBar}/>
+      </>
       
       
     );
@@ -67,8 +68,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setSearchBarActive: (e) => dispatch(setSearchBarActive(e)),
-  setSearchData: (value) => dispatch(setSearchData(value)),
-  setInputRef: (e) => dispatch(setInputRef(e))
+  setSearchData: (value) => dispatch(setSearchData(value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

@@ -1,8 +1,6 @@
 import {MOCK_DATA} from '../MOCK_DATA';
 
-const initialState = {
-    inputRef: '',
-    mockData: MOCK_DATA,
+const initialState = { 
     searchData: {
         'branded': [],
         'common': []
@@ -11,7 +9,8 @@ const initialState = {
     searchBarActive: false,
     selectedItemActive: false,
     selectedItem: {},
-    currentDateIndex: 0
+    currentDateIndex: 0,
+    mockData: MOCK_DATA
 }
 
 export default (state = initialState, action) => {

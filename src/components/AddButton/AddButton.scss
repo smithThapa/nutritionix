@@ -1,5 +1,6 @@
 .add-button {
-  position: absolute;
+  position: fixed;
+  z-index: 3000;
   border-radius: 50%;
   background-color: $base-color;
   width: 56px;
