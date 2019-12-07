@@ -28,12 +28,13 @@
 .calories {
   font-size: 1.6em;
   margin: 0px;
+  margin-top: 20px;
 }
 
 .calories-breakdown {
   display: flex;
   justify-content: space-between;
-  margin: 15px 8px;
+  margin: 1px 8px 10px 8px;
 }
 
 .percentage-num{
@@ -43,3 +44,22 @@
 .percentage-num p{
   align-self: flex-end;
 }
+
+.calories-p{
+  font-size: 12px;
+  margin: 0px;
+}
+
+.meal-type{
+  margin: 0px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+

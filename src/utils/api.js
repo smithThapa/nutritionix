@@ -36,6 +36,10 @@ export const getInstantSearchResults = (value, callback, type) => {
 }
 
 export const getCommonFoodDetails = (value, callback, type) => {
+    callback({
+        type: type,
+        payload: {}
+    })
     axios({
         method: 'post',
         url: `https://trackapi.nutritionix.com/v2/natural/nutrients`,
@@ -56,6 +60,10 @@ export const getCommonFoodDetails = (value, callback, type) => {
 }
 
 export const getBrandedFoodDetails = (value, callback,type) => {
+    callback({
+        type: type,
+        payload: {}
+    })
     axios({
         method: 'get',
         url: `https://trackapi.nutritionix.com/v2/search/item?nix_item_id=${value}`,

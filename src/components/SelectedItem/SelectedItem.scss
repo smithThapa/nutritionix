@@ -12,7 +12,6 @@ $blue-violet: #6200ee;
 }
 
 .selected-item {
-  height: 391px;
   width: 304px;
   padding: 20px;
   display: flex;
@@ -23,6 +22,20 @@ $blue-violet: #6200ee;
     0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 8px 10px 1px rgba(0, 0, 0, 0.14);
 }
 
+.selected-item-circular{
+  height: 390px;
+  width: 304px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 8px 10px 1px rgba(0, 0, 0, 0.14);
+  justify-content: center;
+  align-items: center;
+}
+
 .selected-item-img{
   display: flex;
   justify-content: space-between;
@@ -30,8 +43,8 @@ $blue-violet: #6200ee;
 }
 
 .selected-item-name{
-  font-size: 25px;
-
+  font-size: 24px;
+  text-transform: capitalize;
   margin-top: 5px;
   margin-bottom: 5px;;
 }
@@ -61,6 +74,11 @@ $blue-violet: #6200ee;
   margin: 0px;
 }
 
+.selected-item-brand-name{
+  color: rgba(0, 0, 0, 0.6);
+  padding-bottom: 10px;
+}
+
 .serving-text-field{
   width: 75%;
   color: $blue-violet !important;
@@ -85,6 +103,10 @@ $blue-violet: #6200ee;
   right: 5% !important;
 }
 
+.MuiSelect-select {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
 
 .value-box{
   margin: 10px;
@@ -104,4 +126,8 @@ $blue-violet: #6200ee;
 
 .form-control-select{
   padding: 10px 10px 10px 14px;
+}
+
+.add-to-today{
+  color: rgba(0, 0, 0, 0.6);
 }

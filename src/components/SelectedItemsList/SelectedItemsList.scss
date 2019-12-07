@@ -22,16 +22,26 @@
 }
 
 .bold-font {
-  font-size: 1.5em;
+  font-size: 16px;
   margin: 10px 0px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
 
+}
+
+.calories-bold{
+  white-space: nowrap;
 }
 
 .food-item-name{
   text-transform: capitalize;
 }
 
-.meal-type{
+.meal-type-selected-item{
   text-transform: capitalize;
 }
 

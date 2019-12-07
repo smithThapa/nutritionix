@@ -57,13 +57,14 @@ class SearchList extends React.Component {
           <h3 className="title-search-list" >BRANDED</h3>
           <ul className="unordered-list">
             {this.props.searchData.branded.map((value, index) => {
+              
               if (index <= 4) {
                 return (
                   <li className="search-item" key={value.food_name} style={(index == 0) ? { "paddingTop": "0px" } : {}} onClick={() => { this.foodItemHandler(true, value.nix_item_id) }}>
                     <img className="search-item-img" src={value.photo.thumb} alt="search item"></img>
                     <div className="search-item-p-hr">
                       <p className="branded-food-name">{value.food_name}</p>
-                      <p className='search-item-brand-name'>{value.brand_name_item_name}</p>
+                      <p className='search-item-brand-name'>{value.brand_name}</p>
                       <Divider style={(index == 4) ? { "display": "none" } : {}} />
                     </div>
                   </li>
