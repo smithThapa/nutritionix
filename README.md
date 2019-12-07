@@ -1,3 +1,7 @@
+# Nutritionix
+Nutritionix is a web app which can monitor the clients’ daily calorie intake and keep a history of their diet.  
+
+
 ## How to run the application
 
 1. Open the terminal in VSCode and run the command "npm install".
