@@ -40,6 +40,7 @@ export const getCommonFoodDetails = (value, callback, type) => {
         type: type,
         payload: {}
     })
+    console.log("I am here");
     axios({
         method: 'post',
         url: `https://trackapi.nutritionix.com/v2/natural/nutrients`,
@@ -51,6 +52,7 @@ export const getCommonFoodDetails = (value, callback, type) => {
             query: `${value}`
         }
     }).then(res => {
+        console.log("I am here 2")
         callback({
         type: type,
         payload: res.data.foods[0]

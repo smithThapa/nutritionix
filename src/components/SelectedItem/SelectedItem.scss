@@ -8,7 +8,7 @@ $blue-violet: #6200ee;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;   
+  top: 0;
 }
 
 .selected-item {
@@ -22,7 +22,7 @@ $blue-violet: #6200ee;
     0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 8px 10px 1px rgba(0, 0, 0, 0.14);
 }
 
-.selected-item-circular{
+.selected-item-circular {
   height: 390px;
   width: 304px;
   padding: 20px;
@@ -34,58 +34,65 @@ $blue-violet: #6200ee;
     0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 8px 10px 1px rgba(0, 0, 0, 0.14);
   justify-content: center;
   align-items: center;
+  position: absolute;
 }
 
-.selected-item-img{
+.selected-item-img {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
 
-.selected-item-name{
+.selected-item-name {
   font-size: 24px;
   text-transform: capitalize;
   margin-top: 5px;
-  margin-bottom: 5px;;
+  margin-bottom: 5px;
 }
 
-.cancel-button{
+.cancel-button {
   order: 2;
 }
 
-.clear-icon{
+.cancel-button-circular {
+  align-self: flex-end;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.clear-icon {
   color: $blue-violet;
 }
 
 .selected-item-serving-infos {
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 
 .selected-item-img img {
-
   width: 64px;
   height: 64px;
   order: 1;
 }
 
-.selected-item-value{
+.selected-item-value {
   font-size: 20px;
   margin: 0px;
 }
 
-.selected-item-brand-name{
+.selected-item-brand-name {
   color: rgba(0, 0, 0, 0.6);
   padding-bottom: 10px;
 }
 
-.serving-text-field{
+.serving-text-field {
   width: 75%;
   color: $blue-violet !important;
+}
 
-} 
-
-.serving-text-field label, .serving-text-field p{
+.serving-text-field label,
+.serving-text-field p {
   color: blue !important;
 }
 
@@ -95,11 +102,11 @@ $blue-violet: #6200ee;
   font-size: 15px;
 }
 
-.MuiFilledInput-underline.Mui-error:after{
+.MuiFilledInput-underline.Mui-error:after {
   border-bottom-color: blue !important;
 }
 
-.MuiSelect-icon{
+.MuiSelect-icon {
   right: 5% !important;
 }
 
@@ -107,27 +114,25 @@ $blue-violet: #6200ee;
   color: rgba(0, 0, 0, 0.6) !important;
 }
 
-
-.value-box{
+.value-box {
   margin: 10px;
 }
 
-.selected-item-add-button{
+.selected-item-add-button {
   width: 72px;
   height: 36px;
   align-self: flex-end;
   margin-top: 10px !important;
-  
 }
 
-.form-control{
+.form-control {
   background-color: rgba(0, 0, 0, 0.09);
 }
 
-.form-control-select{
+.form-control-select {
   padding: 10px 10px 10px 14px;
 }
 
-.add-to-today{
+.add-to-today {
   color: rgba(0, 0, 0, 0.6);
 }

@@ -28,7 +28,7 @@ export default (state = initialState, action) => {
             return {...state, currentDateIndex: action.payload};
         case 'SET_SEARCH_DATA':
             return {...state, searchData: action.payload.data, currentSearchValue: action.payload.value};
-        case 'SEkT_ITEM_DETAIL':
+        case 'SET_ITEM_DETAIL':
             return {...state, selectedItem: action.payload};
         case 'SET_INPUT_REF':
             return {...state, inputRef: action.payload}
