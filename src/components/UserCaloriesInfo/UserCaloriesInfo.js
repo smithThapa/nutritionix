@@ -35,7 +35,6 @@ class UserCaloriesInfo extends React.Component {
             this.caloriesMeal[i].calories = 0;
         }
         const { intakeList } = this.props;
-        console.log("intake list: ", intakeList)
         if (intakeList.length > 0) {
             for (let i = 0; i < intakeList.length; i++) {
                 let consumedCalories = calculateConsumedCalories(intakeList[i].serving_size, intakeList[i].serving_qty, intakeList[i].nf_calories);

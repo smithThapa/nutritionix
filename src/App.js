@@ -41,7 +41,7 @@ export default class App extends Component {
           <SelectedItem/>
           
           <div className="main-section">
-            <div>
+            <div className = "user-calories-container">
               <Hidden mdUp>
                 <DayToggle/>
               </Hidden>

@@ -40,7 +40,6 @@ class SelectedItem extends React.Component {
 
   render() {
     const { selectedItem, selectedItemActive } = this.props;
-    console.log("selected item: ", selectedItem);
     let selectedItemContainer = "";
     if (selectedItemActive) {
       selectedItemContainer = (

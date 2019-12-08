@@ -19,13 +19,16 @@ export const setDayIndex = payload => ({
     payload
 })
 
+export const setCurrentSearchValue = payload => ({
+    type: 'SET_CURRENT_SEARCH_VALUE',
+    payload
+})
 
-export const setSearchData = value => dispatch => {
-    const type = 'SET_SEARCH_DATA';
-    getInstantSearchResults(value, dispatch, type);
 
-
-}
+export const setSearchData = payload =>  ({
+    type: 'SET_SEARCH_DATA',
+    payload
+})
 
 export const setItemDetail = (branded,value) => dispatch => {
     const type = 'SET_ITEM_DETAIL';

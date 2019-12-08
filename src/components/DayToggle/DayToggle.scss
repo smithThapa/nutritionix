@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 15px 10px 10px 10px;
+  margin: 15px;
 }
 
 .arrow {
@@ -28,5 +28,9 @@
 
   .day {
     color: white;
+  }
+
+  .toggle-day{
+    margin: 0px 10px 10px 10px;
   }
 }

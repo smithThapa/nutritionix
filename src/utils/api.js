@@ -1,46 +1,13 @@
 import axios from 'axios';
 
-const APP_ID = '93bad8ac';
-const APP_KEY = 'b55223333d6056beeff3b79de13b3e6c';
-
-
-export const getInstantSearchResults = (value, callback, type) => {
-    if(value){
-        axios({
-            method: 'get',
-            url: `https://trackapi.nutritionix.com/v2/search/instant?query=${value}`,
-            headers: {
-                'x-app-id': `${APP_ID}`,
-                'x-app-key': `${APP_KEY}`
-            }
-        }).then(res => {callback({
-            type:type,
-            payload:{
-                value: value,
-                data: res.data
-            }})});
-    } else{
-        callback({
-            type: type,
-            payload: {
-                value: '',
-                data: {
-                    'branded': [],
-                    'common': []
-                }
-            }
-        })
-    }
-
-    
-}
+export const APP_ID = '93bad8ac';
+export const APP_KEY = 'b55223333d6056beeff3b79de13b3e6c';
 
 export const getCommonFoodDetails = (value, callback, type) => {
     callback({
         type: type,
         payload: {}
     })
-    console.log("I am here");
     axios({
         method: 'post',
         url: `https://trackapi.nutritionix.com/v2/natural/nutrients`,
@@ -52,7 +19,6 @@ export const getCommonFoodDetails = (value, callback, type) => {
             query: `${value}`
         }
     }).then(res => {
-        console.log("I am here 2")
         callback({
         type: type,
         payload: res.data.foods[0]
