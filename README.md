@@ -1,5 +1,6 @@
 # Nutritionix
 Nutritionix is a web app which can monitor the clients’ daily calorie intake and keep a history of their diet.  
+![Screenshot](Nutritionix.png)
 
 
 ## How to run the application
